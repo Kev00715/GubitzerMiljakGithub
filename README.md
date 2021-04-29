@@ -1,3 +1,0 @@
-# GubitzerMiljakGithub
-
-Moin Meister
