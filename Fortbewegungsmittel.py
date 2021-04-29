@@ -26,3 +26,6 @@ print("Number of wheels:", a.wheels)
 print("Name of the car:", a.name)
 print("Durchschnittgeschwindigkeit:", a.durchschnitt,"km/h")
 a.Go()
+
+
+print("Hellolooooooooooooooooooooooooooooooooooooooooooooo")
