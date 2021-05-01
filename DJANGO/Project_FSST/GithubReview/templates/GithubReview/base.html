@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
+<<<<<<< HEAD
     <!-- Auch das meta-Tag zum Zeichensatz wurde vereinfacht.-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,5 +112,104 @@
       </section>
     </article>
 </main>   
+=======
+<style>
+  *{
+    box-sizing: border-box;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  li {
+    float: right;
+  }
+
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+
+  li.dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      font-size: 55px;
+      font-weight: bold;
+      text-align: center;
+  }
+  footer {
+          width: 100%;
+            margin: 550px 0px 0px 0px;
+            text-align: center;
+            background: CCCCCC
+        }
+</style>
+</head>
+<body>
+
+<ul>
+<li><a href="#news">Project-Description</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Project-Links</a>
+    <div class="dropdown-content">
+      <a href="https://github.com/Kev00715/GubitzerMiljakGithub">Project Miljak and Gubitzer</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Stefan and Paul</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Leonhard and David</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Metin and Elias</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Simon, Laurenz and Alexander</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Michael and Manuel</a>
+    </div>
+    <li><a href="#home">Home</a></li>
+  </li>
+</ul>
+
+<div class="container">
+    <span>Github-Reviewpage for Projects</span>
+    </div>
+
+<footer>&copy; Copyright 2021 Marcel Miljak / Kevin Gubitzer</footer>
+
+>>>>>>> 9cc676864d0154433f5240f6934b2a5c52f0971c
 </body>
 </html>
