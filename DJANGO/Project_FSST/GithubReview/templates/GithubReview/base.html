@@ -1,64 +1,102 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-    <!-- Auch das meta-Tag zum Zeichensatz wurde vereinfacht.-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     
-    <style>
-        * {
-            color: #999999;
-            font-size: 20px;
-            font-weight: 400;
-            box-sizing: border-box;
-            font-family: 'Monteserat', Arial, sans-serif;
-        }
- 
-        header,
-        aside,
-        footer {
+<style>
+  *{
+    box-sizing: border-box;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  li {
+    float: right;
+  }
+
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+
+  li.dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      font-size: 55px;
+      font-weight: bold;
+      text-align: center;
+  }
+  footer {
+          width: 100%;
+            margin: 550px 0px 0px 0px;
             text-align: center;
-            border-radius: 7px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+            background: CCCCCC
         }
- 
-        header {
-            padding: 60px;
-            text-align: center;
-            background: #000000;
-            color: white;
-            font-size: 30px
-        }
- 
-        aside {
-            width: 25%;
-            float: left;
-            min-height: 517px;
-        }
- 
-        footer {
-            width: 96.5%;
-            margin: 25px 25px 0px 25px;
-            clear: both;
-        }
-    </style>
+</style>
 </head>
 <body>
-<main>
-  <header>
-    Github-Reviewpage for the Projects of the class 4aHEL 2020/21 <!-- Logo/Website-Name am besten als eine h1 nutzen-->
-  </header>
-  
 
-  <aside>
-    Information to the Construction of the Page:  <!-- Eine Seitenleiste -->
-  </aside>
- 
-  <footer>
-    Copyright: Marcel Miljak / Kevin Gubitzer <!-- Der Fußbereich -->
-  </footer>
-</main>   
+<ul>
+<li><a href="#news">Project-Description</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Project-Links</a>
+    <div class="dropdown-content">
+      <a href="https://github.com/Kev00715/GubitzerMiljakGithub">Project Miljak and Gubitzer</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Stefan and Paul</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Leonhard and David</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Metin and Elias</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Simon, Laurenz and Alexander</a>
+      <a href="https://github.com/OE7DIO/rasp_sensor">Project Michael and Manuel</a>
+    </div>
+    <li><a href="#home">Home</a></li>
+  </li>
+</ul>
+
+<div class="container">
+    <span>Github-Reviewpage for Projects</span>
+    </div>
+
+<footer>&copy; Copyright 2021 Marcel Miljak / Kevin Gubitzer</footer>
+
 </body>
 </html>
