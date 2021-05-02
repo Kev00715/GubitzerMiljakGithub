@@ -61,22 +61,29 @@
     display: block;
   }
 
-  button.left {
-	  border: none;
-	  background-color: #4CAF50;
-	  padding: 15px 32px;
-	  font: inherit;
-    margin: 480px 0px 0px 550px;
+  .button{
+    border-color: white;
+    background-color: black;
+    color:white;
   }
 
-  button.right{
-	  border: none;
-	  background-color: #4CAF50;
-	  padding: 15px 32px;
-	  font: black;
-    margin: 0px 0px 0px 170px;
+  .button:hover {
+    color: red;
+    background-color: black;
+    border-color: red;
   }
 
+  .left {
+    margin: 450px 0px 0px 555px;
+    height: 50px;
+  }
+
+  .right {
+    margin: 0px 0px 0px 175px;
+    height: 50px;
+    
+  }
+  
   .container {
       position: absolute;
       top: 50%;
@@ -88,22 +95,22 @@
       font-style: italic;
       text-align: center;
       color: white;
-      width: 40%;
-      
+      width: 40%;  
   }
 
   footer {
-          width: 100%;
-          margin: 170px 0px 0px 0px;
-          text-align: center;
-          color: white;
-          }
+        width: 100%;
+        margin: 160px 0px 0px 0px;
+        text-align: center;
+        color: white;
+  }
+
 </style>
 </head>
 <body>
 
 <ul>
-<li><a href="#Project-Review">Project-Description</a></li>
+<li><a href="#Description">Project-Description</a></li>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Project-Links</a>
     <div class="dropdown-content">
@@ -114,15 +121,18 @@
       <a href="gitea.escpe.net/cc69222/htl-tk-chat" target="_blank">Project Simon, Laurenz and Alexander</a>
       <a href="https://github.com/OE7DIO/rasp_sensor" target="_blank">Project Michael and Manuel</a>
     </div>
-    <li><a href="#ProjectReview">Home</a></li>
+    <li><a href="#home">Home</a></li>
     <li style="float:left; font-family:Arial Narrow; font-size: 20px; font-weight: bold"><a class="active" href="#about">MaKe-GmbH</a></li>
   </li>
 </ul>
-
-<button class="button left"></button>
-<button>Github-Startseite</button>
-<button class="button right"></button>
-<button>Einfach so da!</button>
+<a href="https://github.com">
+  <button class="button left">
+    Github-Startseite
+  </button>
+</a>
+<button class="button right">
+  Einfach so da!
+</button>
 
 <div class="container">
     <span>Github-Reviewpage for Projects</span>
