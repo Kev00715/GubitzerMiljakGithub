@@ -10,3 +10,6 @@ def index(request):
     project = requests.get('https://api.github.com/repos/Kev00715/GubitzerMiljakGithub')
     content = project.text
     return HttpResponse(content)
+
+def description(request):
+    return render(request, 'GithubReview/description.html')
