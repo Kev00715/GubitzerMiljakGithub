@@ -17,8 +17,11 @@ from DJANGO.Project_FSST.GithubReview.views import frontpage2
 from django.contrib import admin
 from django.urls import path
 from GithubReview.views import frontpage
+from django.conf.urls import url 
+from GithubReview import views
 
 urlpatterns = [
     path('', frontpage, name='frontpage'),
     path('admin/', admin.site.urls),
+    url('MiljakGubitzer/', views.index, name='index'),
 ]
