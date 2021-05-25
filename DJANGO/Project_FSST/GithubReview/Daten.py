@@ -6,8 +6,10 @@ from pprint import pprint
 username = "Kev00715"
 username2 = "xTzarol"
 username3 = "OE7DIO"
+
 # pygithub object
 g = Github()
+
 # get that user by username
 user = g.get_user(username)
 user2 = g.get_user(username2)
