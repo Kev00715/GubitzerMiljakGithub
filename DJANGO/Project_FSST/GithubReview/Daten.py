@@ -1,51 +1,58 @@
+from django.shortcuts import render, HttpResponse
+import json
+import requests
 import base64
 from github import Github
 from pprint import pprint
 
 # Github username
 username = "Kev00715"
-username2 = "xTzarol"
-username3 = "OE7DIO"
-
 # pygithub object
 g = Github()
-
 # get that user by username
 user = g.get_user(username)
-user2 = g.get_user(username2)
-user3 = g.get_user(username3)
 
-def print_repo(repo):
-    # repository full name
-    print("Full name:", repo.full_name)
 
-    # repository description
-    print("Description:", repo.description)
 
-    # the date of when the repo was created
-    print("Date created:", repo.created_at)
+def get_repos(user):
+    output = ""
+    for repo in user.get_repos():
+        # repository full name
+        output = "\n".join((output, f"Full name: {repo.full_name}"))
 
-    # the date of the last git push
-    print("Date of last push:", repo.pushed_at)
+        # repository description
+        output = "\n".join((output, f"Description: {repo.description}"))
 
-    # programming language
-    print("Language:", repo.language)
-    print("-"*50)
+        # the date of when the repo was created
+        output = "\n".join((output, f"Date created: {repo.created_at}"))
 
-    # repository content (files & directories)
-    print("Contents:")
-    for content in repo.get_contents(""):
-        print(content)
+        # the date of the last git push
+        output = "\n".join((output, f"Date of last push: {repo.pushed_at}"))
 
-# iterate over all public repositories
-for repo in user.get_repos():
-    print_repo(repo)
-    print("="*100)
+        # programming language
+        output = "\n".join((output, f"Language: {repo.language}"))
+        
+        # number of forks
+        output = "\n".join((output, f"Number of forks: {repo.forks}"))
+        
+        # number of stars
+        outüut = "\n".join((output, f"Number of stars: {repo.stargazers_count}"))
 
-for repo in user2.get_repos():
-    print_repo(repo)
-    print("="*100)
+        output_lf = ["\n", output]
+        #minuses = ["-" for i in range(50)]
+        #output_lf.extend(minuses)
+        #output = "".join(output_lf)
 
-for repo in user3.get_repos():
-    print_repo(repo)
-    print("="*100)
+        output = "\n".join((output, "Contents:"))
+        for content in repo.get_contents(""):
+            output = "\n".join((output, str(content)))
+        
+        try:
+            # repo license
+            output = "\n".join((output, f"License: {base64.b64decode(repo.get_license().content.encode()).decode()}"))
+        except Exception:
+            pass
+        
+        return output
+
+print(get_repos(user))
