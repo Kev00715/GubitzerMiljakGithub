@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Project_FSST.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'GithubReview/templates/GithubReview'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
