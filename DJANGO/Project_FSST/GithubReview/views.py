@@ -74,4 +74,4 @@ def description(request):
     name_project2 = data_user(username3)
     name_project3 = data_user(username2)
 
-    return render(request, 'GithubReview/description.html', {"github" : var, "name_project" : name_project, "github_paul" : var2, "name_project2" : name_project2, "github_leo" : var3, "name_project3" : name_project3})
+    return render(request, 'GithubReview/description.html', {"github_kevin" : var, "name_project" : name_project, "github_paul" : var2, "name_project2" : name_project2, "github_leo" : var3, "name_project3" : name_project3})

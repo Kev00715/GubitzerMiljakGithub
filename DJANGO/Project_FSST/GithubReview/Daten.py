@@ -36,7 +36,7 @@ def get_repos(user):
         output = "\n".join((output, f"Number of forks: {repo.forks}"))
         
         # number of stars
-        outüut = "\n".join((output, f"Number of stars: {repo.stargazers_count}"))
+        output = "\n".join((output, f"Number of stars: {repo.stargazers_count}"))
 
         output_lf = ["\n", output]
         #minuses = ["-" for i in range(50)]
