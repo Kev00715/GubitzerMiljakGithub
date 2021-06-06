@@ -1,9 +1,16 @@
+from django.http import response
 from django.shortcuts import render, HttpResponse
 import json
 import requests
 import base64
 from github import Github
 from pprint import pprint
+from django_token.models import Token
+
+response = requests.get(
+    "http://127.0.0.1:8000/description/",
+    headers={"Authorization": "token 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"}
+)
 
 # Github username
 username = "Kev00715"
