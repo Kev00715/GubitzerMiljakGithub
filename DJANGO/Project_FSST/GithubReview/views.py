@@ -4,6 +4,7 @@ import requests
 import base64
 from github import Github
 from pprint import pprint
+import json
 
 # Github username
 username = "Kev00715"
@@ -12,6 +13,7 @@ username3 = "OE7DIO"
 
 # pygithub object
 g = Github()
+
 # get that user by username
 user = g.get_user(username)
 user2 = g.get_user(username3)
@@ -39,10 +41,10 @@ def get_repos(user):
         output = "\n".join((output, f"Language: {repo.language}"))
         
         # number of forks
-        output = "\n".join((output, f"Number of forks: {repo.forks}"))
+        #output = "\n".join((output, f"Number of forks: {repo.forks}"))
         
         # number of stars
-        output = "\n".join((output, f"Number of stars: {repo.stargazers_count}"))
+        #output = "\n".join((output, f"Number of stars: {repo.stargazers_count}"))
 
         output_lf = ["\n", output]
         #minuses = ["-" for i in range(50)]
@@ -61,7 +63,6 @@ def get_repos(user):
         
         return output
 
-
 # Create your views here.
 def frontpage(request):
     return render(request, 'GithubReview/base.html')
@@ -70,6 +71,9 @@ def index(request):
     project = requests.get('https://api.github.com/repos/Kev00715/GubitzerMiljakGithub')
     content = project.text
     return HttpResponse(content)
+
+def home(request):
+    return render(request, 'GithubReview/base.html')
 
 def description(request):
     var = get_repos(user)
@@ -80,3 +84,22 @@ def description(request):
     name_project3 = data_user(username2)
 
     return render(request, 'GithubReview/description.html', {"github" : var, "name_project" : name_project, "github_paul" : var2, "name_project2" : name_project2, "github_leo" : var3, "name_project3" : name_project3})
+
+'''
+  - Links in Config-Datei machen (eigene Datei json Datei, die verknüpft werden soll)
+  - user data ausgeben (wieviel pushs, namen - Projekt informationen als "drop-down" (wenn klicken, runterklappen))
+  - Github Token
+  - iframe für Infos
+'''
+
+def get_links():
+    input_file = open('links.json')
+    json_array = json.load(input_file)
+    links_list = []
+
+    for item in json_array:
+        store_details = {"links":None}
+        store_details['links'] = item['links']
+        links_list.append(store_details)
+
+    print(links_list)
