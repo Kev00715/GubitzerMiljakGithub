@@ -5,10 +5,7 @@ import requests
 import base64
 from github import Github
 from pprint import pprint
-<<<<<<< HEAD
-=======
 import json
->>>>>>> ee128ed1fabb1908d4fa9b1da9d4ce1ad4d1000c
 
 # Github username
 username = "Kev00715"
@@ -84,3 +81,23 @@ def description(request):
     name_project3 = data_user(username3)
 
     return render(request, 'GithubReview/description.html', {"github_kevin" : var, "name_project" : name_project, "github_leo" : var2, "name_project2" : name_project2, "github_paul" : var3, "name_project3" : name_project3})
+
+'''
+  - Links in Config-Datei machen (eigene Datei json Datei, die verknüpft werden soll)
+  - user data ausgeben (wieviel pushs, namen - Projekt informationen als "drop-down" (wenn klicken, runterklappen))
+  - Github Token
+  - iframe für Infos
+'''
+ 
+def get_links():
+    input_file = open('links.json')
+    json_array = json.load(input_file)
+    links_list = []
+ 
+    for item in json_array:
+        store_details = {"links":None} {"user":None}
+        store_details['links'] = item['links']
+        store_details['user'] = item['user']
+        links_list.append(store_details)
+ 
+    print(links_list)
