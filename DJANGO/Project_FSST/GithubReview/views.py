@@ -15,8 +15,8 @@ username3 = "OE7DIO"
 g = Github()
 # get that user by username
 user = g.get_user(username)
-user2 = g.get_user(username3)
-user3 = g.get_user(username2)
+user2 = g.get_user(username2)
+user3 = g.get_user(username3)
 
 def data_user(user):
     return f'-----Project Information for {user}-----'
@@ -38,12 +38,8 @@ def get_repos(user):
 
         # programming language
         output = "\n".join((output, f"Language: {repo.language}"))
-        
-        # number of forks
-        output = "\n".join((output, f"Number of forks: {repo.forks}"))
-        
-        # number of stars
-        output = "\n".join((output, f"Number of stars: {repo.stargazers_count}"))
+
+        output = "\n".join((output, f"Owner: {repo.owner.name}"))
 
         output_lf = ["\n", output]
         #minuses = ["-" for i in range(50)]
@@ -72,7 +68,7 @@ def description(request):
     var2 = get_repos(user2)
     var3 = get_repos(user3)
     name_project = data_user(username)
-    name_project2 = data_user(username3)
-    name_project3 = data_user(username2)
+    name_project2 = data_user(username2)
+    name_project3 = data_user(username3)
 
-    return render(request, 'GithubReview/description.html', {"github_kevin" : var, "name_project" : name_project, "github_paul" : var2, "name_project2" : name_project2, "github_leo" : var3, "name_project3" : name_project3})
+    return render(request, 'GithubReview/description.html', {"github_kevin" : var, "name_project" : name_project, "github_leo" : var2, "name_project2" : name_project2, "github_paul" : var3, "name_project3" : name_project3})
