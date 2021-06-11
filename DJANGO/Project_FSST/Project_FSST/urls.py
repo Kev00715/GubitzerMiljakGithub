@@ -23,4 +23,5 @@ urlpatterns = [
     path('', frontpage, name='frontpage'),
     path('admin/', admin.site.urls),
     path('description/', views.description),
+    path('home/', views.home)
 ]

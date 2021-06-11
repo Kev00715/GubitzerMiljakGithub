@@ -5,6 +5,10 @@ import requests
 import base64
 from github import Github
 from pprint import pprint
+<<<<<<< HEAD
+=======
+import json
+>>>>>>> ee128ed1fabb1908d4fa9b1da9d4ce1ad4d1000c
 
 # Github username
 username = "Kev00715"
@@ -13,6 +17,7 @@ username3 = "OE7DIO"
 
 # pygithub object
 g = Github()
+
 # get that user by username
 user = g.get_user(username)
 user2 = g.get_user(username2)
@@ -58,9 +63,16 @@ def get_repos(user):
         
         return output
 
-
 # Create your views here.
 def frontpage(request):
+    return render(request, 'GithubReview/base.html')
+
+def index(request):
+    project = requests.get('https://api.github.com/repos/Kev00715/GubitzerMiljakGithub')
+    content = project.text
+    return HttpResponse(content)
+
+def home(request):
     return render(request, 'GithubReview/base.html')
 
 def description(request):
