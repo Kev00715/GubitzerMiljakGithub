@@ -72,6 +72,13 @@
     display: block;
   }
    
+  iframe{
+    width: 100%; 
+    height: 400px; 
+    background-color: white; 
+  }
+
+
 </style>
 </head>
 <body>
@@ -91,11 +98,9 @@
   <li class="logo"><a class="active" href="#about">MaKe-GmbH</a></li>
   </li>
 </ul>
-<font color= "white">
-<p>
-  <font-size  20px >{{name_project}} {{github_kevin|linebreaks}}</font-size> 
-  <font-size 20px >{{name_project2}} {{github_paul|linebreaks}}</font-size>
-  <font-size 20px >{{name_project3}} {{github_leo|linebreaks}}</font-size>
-</p>
+ 
+<iframe srcdoc="{{name_project}} {{github_kevin|linebreaks}}"></iframe>
+<iframe srcdoc="{{name_project2}} {{github_leo|linebreaks}}"></iframe>
+
 </body>
 </html>
