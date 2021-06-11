@@ -22,7 +22,6 @@ from GithubReview import views
 urlpatterns = [
     path('', frontpage, name='frontpage'),
     path('admin/', admin.site.urls),
-    url('MiljakGubitzer/', views.index, name='index'),
     path('description/', views.description),
     path('home/', views.home)
 ]
