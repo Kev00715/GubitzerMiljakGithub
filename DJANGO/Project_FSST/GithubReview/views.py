@@ -105,4 +105,7 @@ def get_links():
         links_list.append(store_details)
 
     print(links_list)
-    
+
+    #drei
+
+
