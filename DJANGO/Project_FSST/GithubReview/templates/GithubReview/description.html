@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="../codebase/webix.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="../codebase/webix.css" type="text/css"
+      charset="utf-8">-->
+
 <style>
   body{
     background-image: url("https://images2.alphacoders.com/985/985381.jpg");
@@ -72,29 +77,129 @@
     display: block;
   }
    
+  .abfrage{
+    width: 100%; 
+    height: auto; 
+    background-color: rgb(60, 60, 60); 
+    font-size: 18px;
+  }
+
+  .button{
+    border-color: white;
+    background-color: rgb(60, 60, 60);
+    color:white;
+  }
+
+  .button:hover {
+    color: red;
+    background-color: rgb(60, 60, 60);
+    border-color: red;
+  }
+
+  .box{
+    width: 100%;
+    height:auto;
+    background-color: rgb(60, 60, 60);
+    font-size: 18px;
+  }
+
 </style>
 </head>
+
 <body>
-<ul>
-<li><a href="/description">Project-Description</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Project-Links</a>
-    <div class="dropdown-content">
-      {% autoescape off %}
-      {{links}
-      {% endautoescape %}
-    </div>
-  <li><a href="/home">Home</a></li>
-  <li class="logo"><a class="active" href="#about">MaKe-GmbH</a></li>
-  </li>
-</ul>
-<font color="white">  
-<p style="font-size: 20px">
-  {% autoescape off %}
-  {{project_information | linebreaks}}
-  {% endautoescape %}
-</p>
+  <ul>
+    <li><a href="/description">Project-Description</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Project-Links</a>
+        <div class="dropdown-content">
+          <a href="https://github.com/Kev00715/GubitzerMiljakGithub" target="_blank">Project Miljak and Gubitzer</a>
+          <a href="https://github.com/OE7DIO/rasp_sensor" target="_blank">Project Stefan and Paul</a>
+          <a href="https://github.com/xTzarol/Schiffe_versenken.git" target="_blank">Project Leonhard and David</a>
+          <a href="https://github.com/edinkhauser/htlinn_project" target="_blank">Project Metin and Elias</a>
+          <a href="gitea.escpe.net/cc69222/htl-tk-chat" target="_blank">Project Simon, Laurenz and Alexander</a>
+          <a href="https://github.com/Manuel-Faehndrich/Wahnsinn" target="_blank">Project Michael and Manuel</a>
+        </div>
+      <li><a href="/home">Home</a></li>
+      <li class="logo"><a class="active" href="#about">MaKe-GmbH</a></li>
+    </li>
+  </ul>
+ 
+  <div class="abfrage">
+    <p>
+      {{name_project}} {{github_kevin|linebreaks}}
+      <a href="https://github.com/Kev00715/GubitzerMiljakGithub/graphs/contributors" target="_blank">
+        <button class="button">
+          Commit Review
+        </button>
+      </a>
+    </p>
+  </div>
+  <div class="abfrage">
+    <p>
+      {{name_project2}} {{github_stefan|linebreaks}}
+      <a href="https://github.com/OE7DIO/rasp_sensor/graphs/contributors" target="_blank">
+        <button class="button">
+          Commit Review
+        </button>
+      </a>
+  </div>
+  <div class="abfrage">
+    <p>
+    {{name_project3}} {{github_leo|linebreaks}}
+    <a href="https://github.com/xTzarol/Schiffe_versenken/graphs/contributors" target="_blank">
+      <button class="button">
+        Commit Review
+      </button>
+    </a>
+  </div>
+  <div class="abfrage">
+    <p>
+      {{name_project4}} {{github_elias|linebreaks}}
+      <a href="https://github.com/edinkhauser/htlinn_project/graphs/contributors" target="_blank">
+      <button class="button">
+        Commit Review
+      </button>
+    </a>
+  </div>
+  <!--<div class="abfrage">
+    <p>
+      {{name_project5}} {{github_alexander|linebreaks}}
+    <a href="https://github.com/OE7DIO/rasp_sensor/graphs/contributors" target="_blank">
+      <button class="button">
+        Commit Review
+      </button>
+    </a>
+  </div>-->
+  <div class="abfrage">
+    <p>
+      {{name_project6}} {{github_michael|linebreaks}}
+    <a href="https://github.com/Manuel-Faehndrich/Wahnsinn/graphs/contributors" target="_blank">
+      <button class="button">
+        Commit Review
+      </button>
+    </a>
+  </div>
+
+  <!--<div class="box">
+    <script>
+      webix.ui({
+        view:"tree",
+        select:true,
+        data: [
+          {id:"root", value:"Cars", open:true, data:[
+            { id:"1", open:true, value:"Toyota", data:[
+              { id:"1.1", value:"Avalon" },
+              { id:"1.2", value:"Corolla" },
+              { id:"1.3", value:"Camry" }
+            ]},
+            { id:"2", value:"Skoda", open:true, data:[
+              { id:"2.1", value:"Octavia" },
+              { id:"2.2", value:"Superb" }
+            ]}
+          ]}
+        ]
+      });
+    </script>
+  </div>-->
 </body>
 </html>
-
-<p>{{ausfuehrung}}</p>
