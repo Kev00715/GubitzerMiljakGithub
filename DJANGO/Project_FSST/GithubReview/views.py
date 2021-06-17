@@ -3,6 +3,7 @@ from django.shortcuts import render, HttpResponse
 import json
 import requests
 import base64
+import os.path
 from github import Github
 from pprint import pprint
 import json
@@ -12,11 +13,11 @@ username = "Kev00715"
 username2 = "OE7DIO"
 username3 = "xTzarol"
 username4 = "edinkhauser"
-username5 = "edinkhauser"
+username5 = "alessacher"
 username6 = "Manuel-Faehndrich"
 
 # pygithub object
-g = Github("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")
+g = Github("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")
 
 # get that user by username
 user = g.get_user(username)
@@ -59,13 +60,16 @@ def get_repos(user):
         for content in repo.get_contents(""):
             output = "\n".join((output, str(content)))
         
-        try:
-            # repo license
-            output = "\n".join((output, f"License: {base64.b64decode(repo.get_license().content.encode()).decode()}"))
-        except Exception:
-            pass
-        
         return output
+
+def projectlist_htmlwrapper(urls, users):
+    output = ""
+
+    for url, user in zip(urls, users):
+        formatted_link = f"<a href=\"{url}\" target=\"_blank\">{user}</a>"
+        output = "\n".join((output, formatted_link))
+    
+    return output
 
 # Create your views here.
 def frontpage(request):
@@ -77,6 +81,13 @@ def index(request):
     return HttpResponse(content)
 
 def home(request):
+    with open(os.path.join(os.path.dirname(__file__), "links.json"), "r") as file:
+        json_links = json.load(file)[0]
+    
+    links = json_links["links"]
+    users = json_links["user"]
+
+    menu = projectlist_htmlwrapper(links, users)
     return render(request, 'GithubReview/base.html')
 
 def description(request):
@@ -93,7 +104,15 @@ def description(request):
     name_project5 = data_user(username5)
     name_project6 = data_user(username6)
 
-    return render(request, 'GithubReview/description.html', {"github_kevin" : var, "name_project" : name_project, "github_stefan" : var2, "name_project2" : name_project2, "github_leo" : var3, "name_project3" : name_project3,
+    with open(os.path.join(os.path.dirname(__file__), "links.json"), "r") as file:
+        json_links = json.load(file)[0]
+    
+    links = json_links["links"]
+    users = json_links["user"]
+
+    menu = projectlist_htmlwrapper(links, users)
+    
+    return render(request, 'GithubReview/description.html', {"links" : menu, "github_kevin" : var, "name_project" : name_project, "github_stefan" : var2, "name_project2" : name_project2, "github_leo" : var3, "name_project3" : name_project3,
      "github_elias" : var4, "name_project4" : name_project4, "github_alexander" : var5, "name_project5" : name_project5, "github_michael" : var6, "name_project6" : name_project6})
 
 '''
@@ -114,5 +133,3 @@ def get_links():
         links_list.append(store_details)
  
     print(links_list)
-
-#jj
