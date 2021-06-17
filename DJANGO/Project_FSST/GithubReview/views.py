@@ -99,13 +99,13 @@ def get_links():
     links_list = []
 
     for item in json_array:
-        store_details = {"links":None} {"user":None}
+        store_details = {"links":None, "user":None}
         store_details['links'] = item['links']
         store_details['user'] = item['user']
         links_list.append(store_details)
 
     print(links_list)
 
-    #drei
+    
 
 
