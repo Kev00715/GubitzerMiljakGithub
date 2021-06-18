@@ -17,7 +17,7 @@ username5 = "alessacher"
 username6 = "Manuel-Faehndrich"
 
 # pygithub object
-g = Github("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")
+g = Github("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")
 
 # get that user by username
 user = g.get_user(username)
@@ -88,7 +88,8 @@ def home(request):
     users = json_links["user"]
 
     menu = projectlist_htmlwrapper(links, users)
-    return render(request, 'GithubReview/base.html')
+
+    return render(request, 'GithubReview/base.html', {"links" : menu})
 
 def description(request):
     var = get_repos(user)
@@ -111,25 +112,6 @@ def description(request):
     users = json_links["user"]
 
     menu = projectlist_htmlwrapper(links, users)
-    
+
     return render(request, 'GithubReview/description.html', {"links" : menu, "github_kevin" : var, "name_project" : name_project, "github_stefan" : var2, "name_project2" : name_project2, "github_leo" : var3, "name_project3" : name_project3,
      "github_elias" : var4, "name_project4" : name_project4, "github_alexander" : var5, "name_project5" : name_project5, "github_michael" : var6, "name_project6" : name_project6})
-
-'''
-  - Links in Config-Datei machen (eigene Datei json Datei, die verknüpft werden soll)
-  - user data ausgeben (wieviel pushs, namen - Projekt informationen als "drop-down" (wenn klicken, runterklappen))
-  - Github Token
-  - iframe für Infos
-'''
- 
-def get_links():
-    input_file = open('links.json')
-    json_array = json.load(input_file)
-    links_list = []
- 
-    for item in json_array:
-        store_details = {"links":None}
-        store_details['links'] = item['links']
-        links_list.append(store_details)
- 
-    print(links_list)

@@ -101,7 +101,7 @@
 
   footer {
         width: 100%;
-        margin: 120px 0px 0px 0px;
+        margin: 100px 0px 0px 0px;
         text-align: center;
         color: white;
   }
@@ -109,23 +109,25 @@
 </style>
 </head>
 <body>
+  <ul>
+    <li><a href="/description">Project-Description</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Project-Links</a>
+        <div class="dropdown-content">
+          {% autoescape off %}
+          {{links}}
+          {% endautoescape %}
+        </div>
+      <li><a href="/home">Home</a></li>
+      <li class="logo"><a class="active" href="#about">MaKe</a></li>
+    </li>
+  </ul>
 
-<ul>
-<li><a href="/description" target="_blank">Project-Description</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Project-Links</a>
-    <div class="dropdown-content">
-      <a href="https://github.com/Kev00715/GubitzerMiljakGithub" target="_blank">Project Miljak and Gubitzer</a>
-      <a href="https://github.com/OE7DIO/rasp_sensor" target="_blank">Project Stefan and Paul</a>
-      <a href="https://github.com/xTzarol/Schiffe_versenken.git" target="_blank">Project Leonhard and David</a>
-      <a href="https://github.com/edinkhauser/htlinn_project" target="_blank">Project Metin and Elias</a>
-      <a href="https://gitea.escpe.net/cc69222/htl-tk-chat" target="_blank">Project Simon, Laurenz and Alexander</a>
-      <a href="https://github.com/FSSTProjekt/FSST" target="_blank">Project Michael and Manuel</a>
-    </div>
-  <li><a href="#home">Home</a></li>
-  <li class="logo"><a class="active" href="#about">MaKe-GmbH</a></li>
-  </li>
-</ul>
+  <p style="font-size: 20px">
+    {% autoescape off %}
+    {{project_information | linebreaks}}
+    {% endautoescape %}
+  </p>
 <a href="https://github.com" target="_blank">
   <button class="button">
     Github-Startseite

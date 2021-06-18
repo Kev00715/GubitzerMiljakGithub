@@ -112,36 +112,12 @@
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Project-Links</a>
         <div class="dropdown-content">
-         
-</style>
-</head>
-<body>
-<ul>
-<li><a href="/description">Project-Description</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Project-Links</a>
-    <div class="dropdown-content">
-      {% autoescape off %}
-      {{links}
-      {% endautoescape %}
-    </div>
-  <li><a href="/home">Home</a></li>
-  <li class="logo"><a class="active" href="#about">MaKe-GmbH</a></li>
-  </li>
-</ul>
-<font color="white">  
-<p style="font-size: 20px">
-  {% autoescape off %}
-  {{project_information | linebreaks}}
-  {% endautoescape %}
-</p>
-</body>
-</html>
- 
-<p>{{ausfuehrung}}</p>
-
+          {% autoescape off %}
+          {{links}}
+          {% endautoescape %}
+        </div>
       <li><a href="/home">Home</a></li>
-      <li class="logo"><a class="active" href="#about">MaKe-GmbH</a></li>
+      <li class="logo"><a class="active" href="#about">MaKe</a></li>
     </li>
   </ul>
 
@@ -191,7 +167,7 @@
   <div class="abfrage">
     <p>
       {{name_project5}} {{github_alexander|linebreaks}}
-    <a href="https://github.com/OE7DIO/rasp_sensor/graphs/contributors" target="_blank">
+    <a href="https://github.com/alessacher/htl-tk-chat/graphs/contributors" target="_blank">
       <button class="button">
         Commit Review
       </button>
